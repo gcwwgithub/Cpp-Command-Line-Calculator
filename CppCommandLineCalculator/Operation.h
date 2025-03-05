@@ -16,7 +16,6 @@ class Addition : public Operation<T>
 public:
     T Calculate(T a, T b) const override
     {
-        std::cout << a << " " << b << std::endl;
         return a + b;
     }
 };
@@ -63,3 +62,23 @@ public:
     }
 };
 
+template <typename T>
+class SquareRoot : public Operation<T>
+{
+public:
+    T Calculate(T a, [[maybe_unused]] T b) const override
+    {
+        return sqrt(a);
+    }
+};
+
+
+template <typename T>
+class Negation : public Operation<T>
+{
+public:
+    T Calculate(T a, [[maybe_unused]] T b) const override
+    {
+        return -a;
+    }
+};
